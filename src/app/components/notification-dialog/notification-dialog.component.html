@@ -1,0 +1,14 @@
+<h5 mat-dialog-title class="title">
+  Notifications for Vehicle with ID: {{ data.vehicle.id }}
+</h5>
+
+<div mat-dialog-content class="content">
+    <div class="notifications-wrapper">
+      <mat-list>
+        @for (notification of data.vehicle.notifications; track notification) {
+          <mat-list-item>{{ notification.message }}</mat-list-item>
+          <mat-divider></mat-divider>
+        }
+      </mat-list>
+    </div>
+</div>

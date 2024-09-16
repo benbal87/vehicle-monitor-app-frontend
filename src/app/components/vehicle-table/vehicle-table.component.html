@@ -1,0 +1,68 @@
+<mat-table
+  matSort
+  [dataSource]="isLoading ? [] : dataSource"
+  class="mat-elevation-z8"
+>
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Vehicle ID
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+    >
+      {{ element.id }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="latitude">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Latitude
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+    >
+      {{ element.latitude }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="longitude">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Longitude
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+    >
+      {{ element.longitude }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="notifications">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Notifications
+    </th>
+    <td
+      mat-cell
+      *matCellDef="let element"
+      (click)="openNotificationDialog(element.id)"
+    >
+      {{ element.notifications.length }} notifications here
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="COLUMN_KEYS"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: COLUMN_KEYS; let i = index"
+  ></tr>
+
+</mat-table>
+
+<mat-paginator
+  (page)="handlePageEvent($event)"
+  aria-label="Select page"
+  showFirstLastButtons
+></mat-paginator>
