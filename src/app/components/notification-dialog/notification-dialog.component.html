@@ -3,12 +3,12 @@
 </h5>
 
 <div mat-dialog-content class="content">
-    <div class="notifications-wrapper">
-      <mat-list>
-        @for (notification of data.vehicle.notifications; track notification) {
-          <mat-list-item>{{ notification.message }}</mat-list-item>
-          <mat-divider></mat-divider>
-        }
-      </mat-list>
-    </div>
+  <div class="notifications-wrapper">
+    <mat-list>
+      @for (notification of data.vehicle.notifications; track notification) {
+        <mat-list-item>{{ notification.message }}</mat-list-item>
+        <mat-divider></mat-divider>
+      }
+    </mat-list>
+  </div>
 </div>
