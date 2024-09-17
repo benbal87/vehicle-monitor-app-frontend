@@ -19,3 +19,5 @@ export interface NotificationDialogData {
 export interface NotificationDialogProps extends MatDialogConfig {
   data: NotificationDialogData
 }
+
+export type Location = { lat: number, lng: number }

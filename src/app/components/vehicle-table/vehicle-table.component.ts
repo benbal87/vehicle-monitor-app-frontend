@@ -73,7 +73,7 @@ export class VehicleTableComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.webSocketSubscription.unsubscribe()
+    this.webSocketSubscription?.unsubscribe()
   }
 
   initPagination(): void {
@@ -112,36 +112,5 @@ export class VehicleTableComponent implements AfterViewInit, OnDestroy {
     } else {
       console.error(`Vehicle with id ${vehicleId} not found.`)
     }
-  }
-
-  getMockVehicles(): Vehicle[] {
-    return [
-      {
-        id: 1,
-        latitude: 48.6768262,
-        longitude: 14.5775257,
-        notifications: []
-      }, {
-        id: 2,
-        latitude: 45.1934857,
-        longitude: 5.7218985,
-        notifications: []
-      }, {
-        id: 3,
-        latitude: -22.0227557,
-        longitude: -63.6775234,
-        notifications: []
-      }, {
-        id: 4,
-        latitude: -16.5030467,
-        longitude: -49.4262684,
-        notifications: []
-      }, {
-        id: 5,
-        latitude: 42.4782102,
-        longitude: 78.3955986,
-        notifications: []
-      }
-    ]
   }
 }

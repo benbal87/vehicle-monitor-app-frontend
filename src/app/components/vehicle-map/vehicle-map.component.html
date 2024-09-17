@@ -1,0 +1,13 @@
+@if (mapsLoaded | async) {
+
+  <google-map height="600px" width="800px" [options]="options">
+
+    @for (location of locations; track location) {
+      <map-marker
+        [position]="{ lat: location.lat, lng: location.lng }"
+      ></map-marker>
+    }
+
+  </google-map>
+
+}
